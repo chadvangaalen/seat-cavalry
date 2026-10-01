@@ -1,0 +1,41 @@
+{
+  "name": "chadvangaalen/seat-cavalry",
+  "description": "SeAT plugin for at-a-glance corporation capital and black ops fleet status",
+  "type": "seat-plugin",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Chad VanGaalen",
+      "role": "Developer"
+    }
+  ],
+  "keywords": [
+    "eve",
+    "seat",
+    "eveonline",
+    "capital",
+    "cavalry"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Chadvangaalen\\Seat\\Cavalry\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.2",
+    "laravel/framework": "^10.0",
+    "eveseat/web": "^5.0",
+    "eveseat/eveapi": "^5.0",
+    "eveseat/services": "^5.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Chadvangaalen\\Seat\\Cavalry\\CavalryServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "version": "1.0.0"
+}

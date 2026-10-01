@@ -14,15 +14,17 @@
         </div>
     @else
         <div class="mb-3">
-            <form method="get" action="{{ route('cavalry::corporation', ['corporation' => $corporation->corporation_id]) }}" class="form-inline" id="cavalry-corp-form">
-                <label class="mr-2" for="corporation_id">{{ trans('cavalry::seat.select_corporation') }}</label>
-                <select name="corporation_id" id="corporation_id" class="form-control form-control-sm select2" style="min-width: 260px;">
-                    @foreach($corporations as $corp)
-                        <option value="{{ $corp->corporation_id }}" @selected($corp->corporation_id == $corporation->corporation_id)>
-                            {{ $corp->name }} [{{ $corp->ticker }}]
-                        </option>
-                    @endforeach
-                </select>
+            <form method="get" action="{{ route('cavalry::corporation', ['corporation' => $corporation->corporation_id]) }}" id="cavalry-corp-form">
+                <div class="form-group mb-0">
+                    <label for="corporation_id">{{ trans('cavalry::seat.select_corporation') }}</label>
+                    <select name="corporation_id" id="corporation_id" class="form-control select2" style="min-width: 280px;">
+                        @foreach($corporations as $corp)
+                            <option value="{{ $corp->corporation_id }}" @selected($corp->corporation_id == $corporation->corporation_id)>
+                                {{ $corp->name }} [{{ $corp->ticker }}]
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
             </form>
         </div>
 
@@ -30,7 +32,7 @@
 
         @include('cavalry::partials.location-snapshot', ['snapshot' => $fleet['location_snapshot']])
 
-        <div class="card card-primary card-outline">
+        <div class="card cavalry-card">
             <div class="card-header">
                 <h3 class="card-title">{{ trans('cavalry::seat.filters') }}</h3>
             </div>
@@ -83,7 +85,7 @@
                 {{ trans('cavalry::seat.no_ships') }}
             </div>
         @else
-            <div class="card card-primary card-outline card-tabs">
+            <div class="card cavalry-card card-tabs">
                 <div class="card-header p-0 border-bottom-0">
                     <ul class="nav nav-tabs" id="cavalry-tabs" role="tablist">
                         <li class="nav-item">
@@ -125,9 +127,16 @@
 @push('javascript')
 <script>
     $(function () {
-        $('.cavalry-page .select2').select2({
+        $('.cavalry-page #system_id, .cavalry-page #group_ids').select2({
             theme: 'bootstrap4',
             width: '100%',
+            dropdownCssClass: 'cavalry-select2-dropdown',
+            dropdownParent: $('.cavalry-page')
+        });
+
+        $('.cavalry-page #corporation_id').select2({
+            theme: 'bootstrap4',
+            width: 'style',
             dropdownCssClass: 'cavalry-select2-dropdown',
             dropdownParent: $('.cavalry-page')
         });

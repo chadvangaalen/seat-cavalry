@@ -5,7 +5,7 @@
         </div>
         <div class="card-body py-2">
             @foreach($snapshot as $item)
-                <span class="badge badge-{{ $loop->first ? 'primary' : 'secondary' }} p-2 mr-1 mb-1">
+                <span class="cavalry-chip {{ $loop->first ? 'is-lead' : '' }}">
                     {{ $item['system_name'] }}
                     <strong>{{ $item['count'] }}</strong>
                 </span>

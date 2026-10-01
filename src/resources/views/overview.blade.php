@@ -4,8 +4,10 @@
 @section('page_header', trans('cavalry::seat.page_title'))
 @section('page_description', trans('cavalry::seat.page_description'))
 
-@section('full')
+@include('cavalry::partials.styles')
 
+@section('full')
+<div class="cavalry-page">
     @if($corporations->isEmpty() || is_null($corporation))
         <div class="alert alert-warning">
             {{ trans('cavalry::seat.no_corporation') }}
@@ -117,15 +119,17 @@
             </div>
         @endif
     @endif
-
+</div>
 @stop
 
 @push('javascript')
 <script>
     $(function () {
-        $('.select2').select2({
+        $('.cavalry-page .select2').select2({
             theme: 'bootstrap4',
-            width: '100%'
+            width: '100%',
+            dropdownCssClass: 'cavalry-select2-dropdown',
+            dropdownParent: $('.cavalry-page')
         });
 
         $('#corporation_id').on('change', function () {

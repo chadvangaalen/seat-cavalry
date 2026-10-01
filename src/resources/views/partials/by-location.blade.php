@@ -1,4 +1,4 @@
-<div class="accordion" id="cavalry-by-location">
+<div class="accordion cavalry-accordion" id="cavalry-by-location">
     @forelse($locations as $location)
         @php
             $sid = $location['system_id'] ?? 'unknown';
@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-header" id="heading-loc-{{ $sid }}">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left"
+                    <button class="cavalry-accordion-toggle"
                             type="button"
                             data-toggle="collapse"
                             data-target="#collapse-loc-{{ $sid }}"
@@ -24,7 +24,7 @@
                  data-parent="#cavalry-by-location">
                 <div class="card-body">
                     @foreach($location['structures'] as $structure)
-                        <h5 class="mt-2 mb-2">
+                        <h5 class="structure-heading mt-2 mb-2">
                             {{ $structure['label'] }}
                             <span class="badge badge-secondary">{{ $structure['count'] }}</span>
                         </h5>

@@ -46,9 +46,9 @@ class FleetEntry
     public function statusBadgeClass(): string
     {
         return match ($this->source) {
-            'active' => 'badge-success',
-            'corp' => 'badge-info',
-            default => 'badge-secondary',
+            'active' => 'badge-active badge-success',
+            'corp' => 'badge-corp badge-info',
+            default => 'badge-hangar badge-secondary',
         };
     }
 

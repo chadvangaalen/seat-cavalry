@@ -1,4 +1,4 @@
-<div class="accordion" id="cavalry-by-character">
+<div class="accordion cavalry-accordion" id="cavalry-by-character">
     @forelse($characters as $character)
         @php
             $cid = $character['character_id'] ?? 'corp';
@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-header" id="heading-char-{{ $cid }}">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left"
+                    <button class="cavalry-accordion-toggle"
                             type="button"
                             data-toggle="collapse"
                             data-target="#collapse-char-{{ $cid }}"

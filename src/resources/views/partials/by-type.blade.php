@@ -1,9 +1,9 @@
-<div class="accordion" id="cavalry-by-type">
+<div class="accordion cavalry-accordion" id="cavalry-by-type">
     @forelse($groups as $group)
         <div class="card">
             <div class="card-header" id="heading-type-{{ $group['key'] }}">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left"
+                    <button class="cavalry-accordion-toggle"
                             type="button"
                             data-toggle="collapse"
                             data-target="#collapse-type-{{ $group['key'] }}"

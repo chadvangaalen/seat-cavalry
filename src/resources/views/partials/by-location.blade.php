@@ -5,7 +5,7 @@
         @endphp
         <div class="card">
             <div class="card-header" id="heading-loc-{{ $sid }}">
-                <h2 class="mb-0">
+                <div class="cavalry-accordion-title">
                     <button class="cavalry-accordion-toggle"
                             type="button"
                             data-toggle="collapse"
@@ -17,7 +17,7 @@
                             <span class="text-muted">— {{ $location['region_name'] }}</span>
                         @endif
                     </button>
-                </h2>
+                </div>
             </div>
             <div id="collapse-loc-{{ $sid }}"
                  class="collapse {{ $loop->first ? 'show' : '' }}"

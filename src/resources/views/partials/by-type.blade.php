@@ -2,7 +2,7 @@
     @forelse($groups as $group)
         <div class="card">
             <div class="card-header" id="heading-type-{{ $group['key'] }}">
-                <h2 class="mb-0">
+                <div class="cavalry-accordion-title">
                     <button class="cavalry-accordion-toggle"
                             type="button"
                             data-toggle="collapse"
@@ -10,7 +10,7 @@
                             aria-expanded="{{ $loop->first ? 'true' : 'false' }}">
                         {{ $group['label'] }} ({{ $group['count'] }})
                     </button>
-                </h2>
+                </div>
             </div>
             <div id="collapse-type-{{ $group['key'] }}"
                  class="collapse {{ $loop->first ? 'show' : '' }}"

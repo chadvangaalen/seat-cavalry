@@ -5,7 +5,7 @@
         @endphp
         <div class="card">
             <div class="card-header" id="heading-char-{{ $cid }}">
-                <h2 class="mb-0">
+                <div class="cavalry-accordion-title">
                     <button class="cavalry-accordion-toggle"
                             type="button"
                             data-toggle="collapse"
@@ -16,7 +16,7 @@
                         @endif
                         {{ $character['character_name'] }} ({{ $character['count'] }})
                     </button>
-                </h2>
+                </div>
             </div>
             <div id="collapse-char-{{ $cid }}"
                  class="collapse {{ $loop->first ? 'show' : '' }}"

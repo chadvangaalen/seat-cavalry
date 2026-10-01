@@ -1,5 +1,5 @@
 @if($snapshot->isNotEmpty())
-    <div class="card card-outline card-secondary mb-3">
+    <div class="card cavalry-card mb-3">
         <div class="card-header">
             <h3 class="card-title">{{ trans('cavalry::seat.location_snapshot') }}</h3>
         </div>

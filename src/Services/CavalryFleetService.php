@@ -268,7 +268,7 @@ class CavalryFleetService
 
     /**
      * @param  Collection<int, FleetEntry>  $entries
-     * @return array<string, array{key: string, label: string, icon: string, color: string, count: int}>
+     * @return array<string, array{key: string, label: string, icon: string, accent: string, count: int, group_id: int}>
      */
     private function buildSummary(Collection $entries): array
     {
@@ -280,7 +280,7 @@ class CavalryFleetService
                 'key' => $meta['key'],
                 'label' => $meta['label'],
                 'icon' => $meta['icon'],
-                'color' => $meta['color'],
+                'accent' => $meta['accent'] ?? $meta['key'],
                 'count' => (int) ($counts[$groupId] ?? 0),
                 'group_id' => (int) $groupId,
             ];

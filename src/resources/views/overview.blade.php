@@ -145,6 +145,11 @@
             var id = $(this).val();
             window.location = '{{ url('/cavalry/corporation') }}/' + id;
         });
+
+        // SeAT Unveil skips :hidden imgs; re-check after tabs/collapses reveal them.
+        $('.cavalry-page').on('shown.bs.tab shown.bs.collapse', function () {
+            $(window).trigger('lookup.unveil');
+        });
     });
 </script>
 @endpush

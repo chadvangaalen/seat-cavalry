@@ -1,6 +1,6 @@
 # seat-cavalry
 
-**Version:** 1.0.2
+**Version:** 1.0.3
 
 SeAT 5 plugin for at-a-glance corporation capital and black ops status — built for directors tracking capitals and blops during peacetime and re-bases.
 
@@ -14,7 +14,7 @@ Cavalry pulls jump-capable hulls from:
 
 …then presents them as:
 
-1. **Summary cards** — Titans, Supercarriers, Carriers, Dreadnoughts, Force Auxiliaries, Jump Freighters, Black Ops, Capital Industrials (Rorqual)
+1. **Summary cards** — Titans, Supercarriers, Carriers, Dreadnoughts, Lancer Dreadnoughts, Force Auxiliaries, Jump Freighters, Black Ops, Capital Industrials (Rorqual)
 2. **Location snapshot** — top systems by hull count (re-base progress at a glance)
 3. **By Ship Type** — grouped inventory with owner + location
 4. **By Character** — pilots who actually own capitals/blops (empty pilots omitted); corp hangar hulls in their own group
@@ -86,6 +86,7 @@ docker compose -f docker-compose.yml -f docker-compose.mariadb.yml -f docker-com
 | Supercarriers | 659 |
 | Carriers | 547 |
 | Dreadnoughts | 485 |
+| Lancer Dreadnoughts | 4594 |
 | Force Auxiliaries | 1538 |
 | Jump Freighters | 902 |
 | Black Ops | 898 |

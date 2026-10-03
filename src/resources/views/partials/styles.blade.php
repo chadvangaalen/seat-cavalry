@@ -97,6 +97,11 @@
     color: #e0cda4 !important;
 }
 
+.cavalry-page .cavalry-metric-icon--lancer_dreadnoughts {
+    background: linear-gradient(160deg, #6b5c4a 0%, #463a2e 100%) !important;
+    color: #e8d4b0 !important;
+}
+
 .cavalry-page .cavalry-metric-icon--force_auxiliaries {
     background: linear-gradient(160deg, #4f6a52 0%, #334636 100%) !important;
     color: #dce8d8 !important;

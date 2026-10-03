@@ -37,6 +37,12 @@ return [
             'icon' => 'fas fa-crosshairs',
             'accent' => 'dreadnoughts',
         ],
+        4594 => [
+            'key' => 'lancer_dreadnoughts',
+            'label' => 'Lancer Dreadnoughts',
+            'icon' => 'fas fa-crosshairs',
+            'accent' => 'lancer_dreadnoughts',
+        ],
         1538 => [
             'key' => 'force_auxiliaries',
             'label' => 'Force Auxiliaries',

@@ -1,6 +1,6 @@
 # seat-cavalry
 
-**Version:** 1.0.4
+**Version:** 1.0.5
 
 SeAT 5 plugin for at-a-glance corporation capital and black ops status — built for directors tracking capitals and blops during peacetime and re-bases.
 

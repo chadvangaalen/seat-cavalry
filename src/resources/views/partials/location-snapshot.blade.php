@@ -5,10 +5,36 @@
         </div>
         <div class="card-body py-2">
             @foreach($snapshot as $item)
-                <span class="cavalry-chip {{ $loop->first ? 'is-lead' : '' }}">
-                    {{ $item['system_name'] }}
-                    <strong>{{ $item['count'] }}</strong>
-                </span>
+                @php
+                    $chipSystemId = $item['system_id'] ?? null;
+                    $isActive = $chipSystemId && ($filters['system_id'] ?? null) == $chipSystemId;
+                    $chipClasses = 'cavalry-chip'
+                        . ($loop->first ? ' is-lead' : '')
+                        . ($isActive ? ' is-active' : '');
+                @endphp
+                @if($chipSystemId)
+                    @php
+                        $query = request()->except(['system_id']);
+                        if (! $isActive) {
+                            $query['system_id'] = $chipSystemId;
+                        }
+                        $href = route('cavalry::corporation', ['corporation' => $corporation->corporation_id]);
+                        if (! empty($query)) {
+                            $href .= '?' . http_build_query($query);
+                        }
+                    @endphp
+                    <a href="{{ $href }}"
+                       class="{{ $chipClasses }}"
+                       @if($isActive) aria-pressed="true" @endif>
+                        {{ $item['system_name'] }}
+                        <strong>{{ $item['count'] }}</strong>
+                    </a>
+                @else
+                    <span class="{{ $chipClasses }}">
+                        {{ $item['system_name'] }}
+                        <strong>{{ $item['count'] }}</strong>
+                    </span>
+                @endif
             @endforeach
         </div>
     </div>

@@ -50,15 +50,19 @@ class CavalryFleetService
             ->merge($this->activeShipEntries($memberIds, $typeIds));
 
         $entries = $this->deduplicate($entries);
+
+        // Each widget ignores its own filter dimension so chips/cards stay usable as toggles.
+        $forSnapshot = $this->applyFilters($entries, array_merge($filters, ['system_id' => null]));
+        $forSummary = $this->applyFilters($entries, array_merge($filters, ['group_ids' => []]));
         $entries = $this->applyFilters($entries, $filters);
 
         return [
             'entries' => $entries->values(),
-            'summary' => $this->buildSummary($entries),
+            'summary' => $this->buildSummary($forSummary),
             'by_type' => $this->groupByType($entries),
             'by_character' => $this->groupByCharacter($entries),
             'by_location' => $this->groupByLocation($entries),
-            'location_snapshot' => $this->locationSnapshot($entries),
+            'location_snapshot' => $this->locationSnapshot($forSnapshot),
         ];
     }
 

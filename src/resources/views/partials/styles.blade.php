@@ -50,6 +50,27 @@
     min-height: 78px;
 }
 
+.cavalry-page a.cavalry-metric {
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.cavalry-page a.cavalry-metric:hover,
+.cavalry-page a.cavalry-metric:focus {
+    border-color: var(--cavalry-gold);
+    background-color: var(--cavalry-panel-2) !important;
+    color: var(--cavalry-text);
+    text-decoration: none;
+}
+
+.cavalry-page a.cavalry-metric.is-active {
+    border-color: var(--cavalry-gold);
+    box-shadow: inset 0 0 0 1px rgba(197, 174, 135, 0.35) !important;
+    background-color: rgba(197, 174, 135, 0.08) !important;
+}
+
 .cavalry-page .info-box-text {
     color: var(--cavalry-muted) !important;
     text-transform: uppercase;
@@ -260,12 +281,33 @@
     border-radius: 3px;
     padding: 0.35rem 0.65rem;
     margin: 0 0.25rem 0.35rem 0;
+    text-decoration: none;
+}
+
+.cavalry-page a.cavalry-chip {
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.cavalry-page a.cavalry-chip:hover,
+.cavalry-page a.cavalry-chip:focus {
+    background: rgba(197, 174, 135, 0.18);
+    border-color: var(--cavalry-gold);
+    color: var(--cavalry-gold);
+    text-decoration: none;
 }
 
 .cavalry-page .cavalry-chip.is-lead {
     background: rgba(197, 174, 135, 0.12);
     border-color: var(--cavalry-gold);
     color: var(--cavalry-gold);
+}
+
+.cavalry-page .cavalry-chip.is-active {
+    background: rgba(197, 174, 135, 0.28);
+    border-color: var(--cavalry-gold);
+    color: var(--cavalry-gold);
+    box-shadow: inset 0 0 0 1px rgba(197, 174, 135, 0.35);
 }
 
 .cavalry-page .cavalry-chip strong {

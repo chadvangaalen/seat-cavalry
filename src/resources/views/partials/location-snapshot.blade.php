@@ -9,7 +9,7 @@
                     $chipSystemId = $item['system_id'] ?? null;
                     $isActive = $chipSystemId && ($filters['system_id'] ?? null) == $chipSystemId;
                     $chipClasses = 'cavalry-chip'
-                        . ($loop->first ? ' is-lead' : '')
+                        . ($loop->first && empty($filters['system_id']) ? ' is-lead' : '')
                         . ($isActive ? ' is-active' : '');
                 @endphp
                 @if($chipSystemId)
